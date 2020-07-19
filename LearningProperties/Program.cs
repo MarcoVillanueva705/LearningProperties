@@ -12,18 +12,29 @@ namespace LearningProperties
             //properties allow more control over access
             get
             {
-                return health > 0;
+                return Health > 0;
             }
         }
-        int health = 100;
+        //int health = 100;
+
+            //auto-implemented property
+            //if you have a field with lots of code depending on it
+            //and you realize you need some funcitonality to execute
+            //with setting or getting the value, then you have to 
+            //rebuild any code that is in a separate assembly
+            //that is trying to look for that field if you want to
+            //switch it to a property aka you cause breaking changes
+            //in your app; better to use from the jump even if you don't
+            //need that functionality initially
+        public int Health { get; private set; } = 100;
 
         public void Hit()
         {
             Random r = new Random();
-            health -= r.Next(5, 50);
+            Health -= r.Next(5, 50);
         }
 
-        
+
     }
     class Program
     {
