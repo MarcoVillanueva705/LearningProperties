@@ -26,6 +26,8 @@ namespace LearningProperties
             //switch it to a property aka you cause breaking changes
             //in your app; better to use from the jump even if you don't
             //need that functionality initially
+            //inside class Player you can get and set Health
+            //outside of class Player only get
         public int Health { get; private set; } = 100;
 
         public void Hit()
